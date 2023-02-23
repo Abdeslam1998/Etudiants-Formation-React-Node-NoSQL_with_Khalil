@@ -12,6 +12,8 @@ import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom'
 import CreateStudent from './components/create-student'
 import EditStudent from './components/edit-student'
 import StudentList from './components/student-list'
+import CreateProd from './componentsProd/create-produit'
+import ProduitList from './componentsProd/produit-list'
 
 function App() {
   return (
@@ -38,6 +40,19 @@ function App() {
                     Student List
                   </Link>
                 </Nav>
+
+                <Nav>
+                  <Link to={'/create-produit'} className="nav-link">
+                    Create Prod
+                  </Link>
+                </Nav>
+
+                <Nav>
+                  <Link to={'/produit-list'} className="nav-link">
+                    Produit List
+                  </Link>
+                </Nav>
+
               </Nav>
             </Container>
           </Navbar>
@@ -67,6 +82,16 @@ function App() {
                     exact
                     path="/student-list"
                     component={(props) => <StudentList {...props} />}
+                  />
+                  <Route
+                    exact
+                    path="/create-produit"
+                    component={(props) => <CreateProd {...props} />}
+                  />
+                  <Route
+                    exact
+                    path="/produit-list"
+                    component={(props) => <ProduitList {...props} />}
                   />
                 </Switch>
               </div>
